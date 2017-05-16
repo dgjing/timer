@@ -1,12 +1,26 @@
 var numDom = $(".num");
-var timeDom = $(".time a");
+var timeDom = $(".time");
 var playerDom = $(".player a");
 var hour = 0;
 var minute = 0;
 var second = 0;
 var timeout = null;
 var timeoutstart = null;
-var clickTime = new Date().getTime();
+
+$(timeDom).longpress(function () {
+    if (!confirm("确定重置记时？")) {
+        return;
+    }
+    resetTime();
+});
+
+$(numDom).longpress(function () {
+    if (!confirm("确定重置分数？")) {
+        return;
+    }
+    numDom[0].innerHTML = 0;
+    numDom[1].innerHTML = 0;
+});
 
 function editPlayer(index) {
     var name = playerDom[index].innerHTML;
@@ -15,31 +29,6 @@ function editPlayer(index) {
         playerDom[index].innerHTML = newName;
     }
 }
-
-timeDom.on("click", function () {
-    if (new Date().getTime() - clickTime < 500) {
-        var status = confirm("确定重置记时？");
-        if (!status) {
-            return;
-        }
-        resetTime();
-    } else {
-        clickTime = new Date().getTime();
-    }
-});
-
-numDom.on("click", function () {
-    if (new Date().getTime() - clickTime < 500) {
-        var status = confirm("确定重置分数？");
-        if (!status) {
-            return;
-        }
-        numDom[0].innerHTML = 0;
-        numDom[1].innerHTML = 0;
-    } else {
-        clickTime = new Date().getTime();
-    }
-});
 
 function resetTime() {
     hour = 0;
