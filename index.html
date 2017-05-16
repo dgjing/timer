@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no">
+    <meta content="telephone=no" name="format-detection"/>
+    <meta content="email=no" name="format-detection"/>
+    <title>Title</title>
+    <link href="index.css?t=1" rel="stylesheet" type="text/css">
+</head>
+<body>
+    <div class="wrapper flex">
+        <div class="player-wrapper flex-1 flex">
+            <div class="player flex-1 flex align-center">
+                <span><a href="#" onclick="editPlayer(0)">player1</a></span>
+                <span class="num flex-1">0</span>
+            </div>
+            <div class="btn-wrapper flex">
+                <input type="button" onclick="countFun(0, 'minus')" class="minus flex-1" value="-"/>
+                <input type="button" onclick="countFun(0,'plus')" class="plus flex-1" value="+"/>
+            </div>
+        </div>
+        <div class="player-wrapper flex-1 flex">
+            <div class="player flex-1 flex align-center">
+                <span><a href="#" onclick="editPlayer(1)">player2</a></span>
+                <span class="num flex-1">0</span>
+            </div>
+            <div class="btn-wrapper flex">
+                <input type="button" onclick="countFun(1,'minus')" class="minus flex-1" value="-"/>
+                <input type="button" onclick="countFun(1,'plus')" class="plus flex-1" value="+"/>
+            </div>
+        </div>
+        <span class="time"><a href="#">00:00:00</a></span>
+    </div>
+    <script src="zepto.min.js"></script>
+    <script src="index.js?t=3"></script>
+</body>
+</html>
