@@ -41,7 +41,6 @@ html, body {
 .time {
     position: absolute;
     width: 5rem;
-    background-color: red;
     height: 3rem;
     line-height: 3rem;
     right: 0;
